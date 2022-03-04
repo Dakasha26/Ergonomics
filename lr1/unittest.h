@@ -9,9 +9,8 @@ class UnitTest : public QObject
 
 public:
     explicit UnitTest(QObject *parent = nullptr);
-    ~UnitTest();
 
-public slots:
+private slots:
     void add();
     void sub();
     void mult();

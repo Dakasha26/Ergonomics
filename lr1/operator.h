@@ -9,7 +9,6 @@ class Oper : public QObject
 
 public:
     explicit Oper(QObject *parent = nullptr);
-    ~Oper();
 
 
 public slots:
