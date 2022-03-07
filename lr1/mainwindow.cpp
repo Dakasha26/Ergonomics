@@ -1,8 +1,16 @@
+/*
+ * Автор: Скворцов Даниил
+ * Дата: 25.02.22
+ * Назначение: Демонстрация интеграционных тестов. Функции sum, dif, divis, mul дублируют те, которые представлены в классе Oper.
+ * + Имеется код взаимодействия с экранной формой.
+*/
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QtDebug"
 
 
+/* ----- Функции арифметических действий ----- */
 int sum(int a, int b)
 {
     return a + b;
@@ -23,6 +31,8 @@ int divis(int a, int b)
     return a / b;
 }
 
+
+/* ----- Интеграционные тесты ----- */
 void testSum()
 {
     int a = 3;
@@ -73,7 +83,7 @@ void testDiv()
 
 
 
-
+/* ----- Взаимодействие с экранной формой ----- */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -92,7 +102,7 @@ MainWindow::~MainWindow()
 
 }
 
-void MainWindow::on_btnMinus_clicked()
+void MainWindow::on_btnDif_clicked()
 {
     int firstNum = ui->firstNum->text().toInt();
     int secondNum = ui->secondNum->text().toInt();
@@ -101,7 +111,7 @@ void MainWindow::on_btnMinus_clicked()
 
 }
 
-void MainWindow::on_btnPlus_clicked()
+void MainWindow::on_btnSum_clicked()
 {
     int firstNum = ui->firstNum->text().toInt();
     int secondNum = ui->secondNum->text().toInt();
@@ -109,7 +119,7 @@ void MainWindow::on_btnPlus_clicked()
     ui->resultNum->setText(QString::number(sum(firstNum, secondNum)));
 }
 
-void MainWindow::on_btnMultiplier_clicked()
+void MainWindow::on_btnMul_clicked()
 {
     int firstNum = ui->firstNum->text().toInt();
     int secondNum = ui->secondNum->text().toInt();
@@ -117,7 +127,7 @@ void MainWindow::on_btnMultiplier_clicked()
     ui->resultNum->setText(QString::number(mul(firstNum, secondNum)));
 }
 
-void MainWindow::on_btnDevider_clicked()
+void MainWindow::on_btnDiv_clicked()
 {
     int firstNum = ui->firstNum->text().toInt();
     int secondNum = ui->secondNum->text().toInt();

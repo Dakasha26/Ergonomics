@@ -17,10 +17,10 @@ public:
 
 
 private slots:
-    void on_btnPlus_clicked();
-    void on_btnMinus_clicked();
-    void on_btnMultiplier_clicked();
-    void on_btnDevider_clicked();
+    void on_btnSum_clicked();
+    void on_btnDif_clicked();
+    void on_btnMul_clicked();
+    void on_btnDiv_clicked();
 
 private:
     Ui::MainWindow *ui;

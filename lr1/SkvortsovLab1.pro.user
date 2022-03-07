@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.0.2, 2022-03-04T12:29:25. -->
+<!-- Written by QtCreator 6.0.2, 2022-03-07T05:06:38. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -68,10 +68,10 @@
     <value type="bool" key="AutoTest.Framework.QtTest">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
-    <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:add">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:dif">Checked</value>
     <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:div">Checked</value>
-    <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:mult">Checked</value>
-    <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:sub">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:mul">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.cpp:sum">Checked</value>
     <value type="Qt::CheckState" key="1@C:/Users/Admin/Desktop/ergonomic/ergonomics/lr1/unittest.h:UnitTest">Checked</value>
    </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>

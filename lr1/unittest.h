@@ -11,9 +11,9 @@ public:
     explicit UnitTest(QObject *parent = nullptr);
 
 private slots:
-    void add();
-    void sub();
-    void mult();
+    void sum();
+    void dif();
+    void mul();
     void div();
 
 signals:

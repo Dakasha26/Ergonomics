@@ -1,3 +1,9 @@
+/*
+ * Автор: Скворцов Даниил
+ * Дата: 25.02.22
+ * Назначение: Функции арифметических операций.
+*/
+
 #include "operator.h"
 
 Oper::Oper(QObject *parent) : QObject{parent}
@@ -17,6 +23,6 @@ int Oper::mul(int a, int b) {
     return a * b;
 }
 
-int Oper::divis(int a, int b) {
+int Oper::div(int a, int b) {
     return a / b;
 }

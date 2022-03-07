@@ -14,7 +14,7 @@ public:
 public slots:
     int sum(int a, int b);
     int mul(int a, int b);
-    int divis(int a, int b);
+    int div(int a, int b);
     int dif(int a, int b);
 
 signals:
