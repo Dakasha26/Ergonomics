@@ -1,3 +1,9 @@
+/*
+ * Автор: Скворцов Даниил
+ * Дата: 14.02.22
+ * Назначение: Программа отправляет Ардуино введённое пользователем число, а в ответ получает, чётное ли оно
+*/
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QSerialPortInfo>
@@ -27,7 +33,7 @@ void MainWindow::on_btnConnect_clicked()
     }
 
     if(arduino_is_available){
-        qDebug() << "Найден порт" + arduino_uno_port_name + "\n";
+        qDebug() << "Найден порт" + arduino_uno_port_name + "";
 
         // Копипастовые настройки. В случае проблем смотреть сюда
         arduino->setPortName(arduino_uno_port_name);
@@ -37,6 +43,7 @@ void MainWindow::on_btnConnect_clicked()
         //arduino->setFlowControl(QSerialPort::NoFlowControl);
         arduino->setParity(QSerialPort::NoParity);
         arduino->setStopBits(QSerialPort::OneStop);
+        qDebug() << "Baud Rate: 9600/nData Bits: 8 bit";
 
         QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(readSerial()));
 
@@ -78,7 +85,10 @@ MainWindow::~MainWindow()
 void MainWindow::readSerial()
 {
     serialData = arduino->readAll();
-    ui->parityLabel->text() = QString(serialData);
+    if(serialData == "0")
+        ui->parityLabel->text() = "чётное";
+    else
+        ui->parityLabel->text() = "нечётное";
 }
 
 void MainWindow::writeSerial(char* c)
