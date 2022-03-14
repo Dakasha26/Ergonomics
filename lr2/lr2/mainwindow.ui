@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnConnect">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -27,7 +27,7 @@
      <string>Connect</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btnDisconnect">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -40,7 +40,7 @@
      <string>Disconnect</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="parityLabel">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -53,7 +53,7 @@
      <string>Чётное</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
+   <widget class="QSpinBox" name="spinBoxOfNumber">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -62,8 +62,11 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>9</number>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btnGetParity">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -76,7 +79,7 @@
      <string>Проверить</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="statusLabel">
     <property name="geometry">
      <rect>
       <x>210</x>

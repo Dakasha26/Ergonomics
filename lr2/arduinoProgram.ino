@@ -14,11 +14,11 @@ void setup() {
 // Работа программы в бесконечном цикле
 void loop() {
   if(Serial.available() > 0) {
-    int number = Serial.read();
+    int number = Serial.parseInt();
     if(number % 2 == 0)
-      Serial.print('Чётное');
+      Serial.println(1); // Чётное
     else
-      Serial.print('Нечётное');     
+      Serial.println(0); // Нечётное    
     Serial.flush();
   }
 }

@@ -20,15 +20,11 @@ public:
 
 private slots:
     void readSerial();
-    void writeSerial();
+    void writeSerial(char* c);
 
     void on_btnConnect_clicked();
-
-    void on_pushBtnDisconnect_clicked();
-
-    void on_pushBtnGetParity_clicked();
-
-    void on_spinBoxOfNumber_valueChanged(int arg1);
+    void on_btnGetParity_clicked();
+    void on_btnDisconnect_clicked();
 
 private:
     Ui::MainWindow *ui;
