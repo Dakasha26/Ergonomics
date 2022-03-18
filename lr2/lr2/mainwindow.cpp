@@ -1,6 +1,6 @@
 /*
  * Автор: Скворцов Даниил
- * Дата: 14.02.22
+ * Дата: 14.03.22
  * Назначение: Программа отправляет Ардуино введённое пользователем число, а в ответ получает, чётное ли оно
 */
 
@@ -39,15 +39,17 @@ void MainWindow::on_btnConnect_clicked()
         arduino->setPortName(arduino_uno_port_name);
         arduino->open(QSerialPort::ReadWrite);
         arduino->setBaudRate(QSerialPort::Baud9600); // Стандартный 9600
-        arduino->setDataBits(QSerialPort::Data8); // байт
-        //arduino->setFlowControl(QSerialPort::NoFlowControl);
+        arduino->setDataBits(QSerialPort::Data8); // 8 байт
         arduino->setParity(QSerialPort::NoParity);
         arduino->setStopBits(QSerialPort::OneStop);
-        qDebug() << "Baud Rate: 9600/nData Bits: 8 bit";
+        qDebug() << "Baud Rate: 9600";
+        qDebug() << "Data Bits: 8 bitt";
 
         QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(readSerial()));
 
-        ui->statusLabel->text() = "Подключено";
+        ui->statusLabel->setText("Подключено");
+        ui->spinBoxOfNumber->setEnabled(true);
+        ui->btnGetParity->setEnabled(true);
         qDebug() << "Ардуино подключено";
     } else {
         qDebug() << "Не удалось обнаружить корректный порт";
@@ -58,7 +60,9 @@ void MainWindow::on_btnConnect_clicked()
 void MainWindow::on_btnDisconnect_clicked()
 {
     arduino->disconnect();
-    ui->statusLabel->text() = "Неактивно";
+    ui->statusLabel->setText("Неактивно");
+    ui->spinBoxOfNumber->setEnabled(false);
+    ui->btnGetParity->setEnabled(false);
     qDebug() << "Ардуино отключено";
 }
 
@@ -67,6 +71,7 @@ void MainWindow::on_btnGetParity_clicked()
 {
     char* c = (ui->spinBoxOfNumber->text()).toUtf8().data();
     arduino->write(c);
+    readSerial();
 
 }
 
@@ -82,19 +87,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/* ----- Чтение и вывод Serial на Ардуино ----- */
 void MainWindow::readSerial()
 {
-    serialData = arduino->readAll();
-    if(serialData == "0")
-        ui->parityLabel->text() = "чётное";
-    else
-        ui->parityLabel->text() = "нечётное";
+    serialData = arduino->readLine();
+    if(serialData.size() == 3)
+        if(serialData[0] == '1'){
+            ui->parityLabel->setText("чётное");
+        } else {
+            ui->parityLabel->setText("нечётное");
+        }
 }
 
 void MainWindow::writeSerial(char* c)
 {
     arduino->write(c);
 }
-
-
-

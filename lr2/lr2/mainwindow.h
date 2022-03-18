@@ -1,3 +1,9 @@
+/*
+ * Автор: Скворцов Даниил
+ * Дата: 14.03.22
+ * Назначение: Программа отправляет Ардуино введённое пользователем число, а в ответ получает, чётное ли оно
+*/
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -29,8 +35,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSerialPort *arduino;
-    static const quint16 arduino_uno_vendor_id = 9025;
-    static const quint16 arduino_uno_product_id = 67;
+    static const quint16 arduino_uno_vendor_id = 0x1A86;
+    static const quint16 arduino_uno_product_id = 0x7523;
     QByteArray serialData;
     QString serialBuffer;
     bool first_try;

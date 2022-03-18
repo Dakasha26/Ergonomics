@@ -45,15 +45,18 @@
      <rect>
       <x>340</x>
       <y>110</y>
-      <width>49</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Чётное</string>
+     <string/>
     </property>
    </widget>
    <widget class="QSpinBox" name="spinBoxOfNumber">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -67,6 +70,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="btnGetParity">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>400</x>
